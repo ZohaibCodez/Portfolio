@@ -282,7 +282,10 @@ section .main-container {
 }
 
 .social-links{
-  display: flex;justify-content: flex-start;align-items: center;gap: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
 }
 
 .social-links i {
