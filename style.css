@@ -159,10 +159,6 @@ nav {
   margin-top: 60px;
 }
 
-.dropdowncolor {
-  background-color: red;
-}
-
 .dropdown .links a {
   display: flex;
   color: white;
@@ -245,6 +241,7 @@ section .main-container {
 
 .content .typewriter {
   width: 100%;
+  overflow: hidden;
 }
 .content .typewriter .text {
   position: relative;
@@ -282,6 +279,10 @@ section .main-container {
 .content p {
   font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
   margin: 10px 0;
+}
+
+.social-links{
+  display: flex;justify-content: flex-start;align-items: center;gap: 5px;
 }
 
 .social-links i {
@@ -776,6 +777,6 @@ footer .text span a:hover {
 
     @media (max-width: 505px) {
       .main-container .content .typewriter .text{
-        font-size: 30px;
+        font-size: 25px;
       }
     }
