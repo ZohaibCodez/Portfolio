@@ -2,7 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&display=swap");
 
 * {
   margin: 0;
@@ -46,11 +46,15 @@ nav {
 }
 
 .nav-container {
+  position: fixed;
+  top: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
+  padding: 30px 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
+
 }
 
 .logo {
@@ -70,21 +74,31 @@ nav {
 .hamburg,
 .cancel {
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   right: 15px;
   top: 10px;
   color: white;
   /* opacity: 0; */
   pointer-events: none;
   font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
-
+  transition: all 0.2s ease;
 }
 
-.hamburg-opacity{
-  opacity: 0;
-} 
+.cancel:hover {
+  color: #b74b4b;
+}
 
-.hamburg-opacity0{
+.hamburg:hover {
+  color: #b74b4b;
+}
+
+.hamburg-opacity {
+  opacity: 0;
+  z-index: -1;
+}
+
+.hamburg-opacity1 {
+  z-index: 1000;
   opacity: 1;
 }
 
@@ -123,10 +137,9 @@ nav {
 
 .dropdown {
   z-index: 100;
-  position: absolute;
+  position: fixed;
   top: 0;
-  transform: translateY(-500px);
-  /* transform: translateY(0px); */
+  /* transform: translateY(-500px); */
   width: 100%;
   height: auto;
   backdrop-filter: blur(4px) brightness(40%);
@@ -134,12 +147,20 @@ nav {
   transition: 0.2s linear;
 }
 
-.dropdown .active-dropdown{
+.active-dropdown {
   transform: translateY(0px);
+}
+
+.inactive-dropdown {
+  transform: translateY(-500px);
 }
 
 .dropdown .links {
   margin-top: 60px;
+}
+
+.dropdowncolor {
+  background-color: red;
 }
 
 .dropdown .links a {
@@ -317,6 +338,12 @@ section .content {
   font-family: "Poppins", sans-serif;
 }
 
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .about .about-details {
   display: flex;
   justify-content: space-between;
@@ -409,8 +436,12 @@ section .button button:hover {
   color: #b74b4b;
 }
 
-.skils {
+/* ******************** SKILLS SECTION STYLING ******************** */
+
+.skills {
   background-color: black;
+  display: flex;
+  align-items: center;
 }
 
 .skills .content {
@@ -474,6 +505,13 @@ section .button button:hover {
   color: #b74b4b;
 }
 
+/* ******************** SERVICES SECTION STYLING ******************** */
+
+.services {
+  display: flex;
+  align-items: center;
+}
+
 .services .boxes {
   display: flex;
   flex-wrap: wrap;
@@ -524,6 +562,8 @@ section .button button:hover {
 
 .contact {
   background-color: black;
+  display: flex;
+  align-items: center;
 }
 
 .contact .content {
@@ -537,7 +577,7 @@ section .button button:hover {
   margin: auto;
 }
 
-.contact button{
+.contact button {
   width: auto;
   height: auto;
 }
@@ -579,6 +619,11 @@ footer .text span a:hover {
   display: none;
 }
 
+@media (max-width: 1700px) {
+  section .main-container .image{
+    height: 80%;
+  }
+}
 @media (max-width: 1000px) {
   .main-container .content {
     margin-top: 20px;
@@ -599,7 +644,7 @@ footer .text span a:hover {
     padding-left: 0;
     display: flex;
     flex-direction: column;
-    gap:20px;
+    gap: 20px;
   }
   section .main-container .image {
     z-index: -1;
@@ -623,9 +668,18 @@ footer .text span a:hover {
   }
 }
 
-@media (min-width:968px){
-  .hamburg,.cancel{
+@media (min-width: 968px) {
+  .hamburg,
+  .cancel {
     opacity: 0;
+  }
+  .dropdown {
+    transform: translateY(-500px);
+  }
+  .nav-container{
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow: 0 0 20px black;
+    z-index: 1000;
   }
 }
 
@@ -651,7 +705,7 @@ footer .text span a:hover {
   .cancel {
     /* opacity: 1; */
     cursor: pointer;
-    z-index: 1000;
+    /* z-index: 1000; */
     pointer-events: visible;
   }
 
@@ -719,3 +773,9 @@ footer .text span a:hover {
     color: #b74b4b;
   }
 }
+
+    @media (max-width: 505px) {
+      .main-container .content .typewriter .text{
+        font-size: 30px;
+      }
+    }

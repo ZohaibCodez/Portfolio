@@ -18,6 +18,19 @@ setInterval(textLoad, 12000);
 
 const dropdown = document.body.querySelector(".dropdown");
 const hamburg = () => {
-    document.body.querySelector(".hamburg").classList.toggle("hamburg-opacity");
-    document.body.querySelector(".hamburg").classList.toggle("hamburg-opacity0");
-  };
+  document.body.querySelector(".hamburg").classList.toggle("hamburg-opacity");
+  document.body.querySelector(".hamburg").classList.toggle("hamburg-opacity1");
+  document.body.querySelector(".dropdown").classList.toggle("active-dropdown");
+  document.body
+    .querySelector(".dropdown")
+    .classList.toggle("inactive-dropdown");
+};
+
+const cancel = () => {
+  document.body.querySelector(".hamburg").classList.toggle("hamburg-opacity");
+  document.body.querySelector(".hamburg").classList.toggle("hamburg-opacity1");
+  document.body.querySelector(".dropdown").classList.toggle("active-dropdown");
+  document.body
+    .querySelector(".dropdown")
+    .classList.toggle("inactive-dropdown");
+};
